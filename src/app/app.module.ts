@@ -9,6 +9,8 @@ import { HighchartComponent } from './highchart/highchart.component';
 import { AddComponent } from './add/add.component';
 import { AsideComponent } from './aside/aside.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChartModule } from 'angular-highcharts';
+import * as Highcharts from 'highcharts';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
