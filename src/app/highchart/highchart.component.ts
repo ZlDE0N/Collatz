@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 
 @Component({
@@ -8,10 +8,11 @@ import { Chart } from 'angular-highcharts';
 })
 export class HighchartComponent {
 
-  chart = new Chart({
+
+ chart = new Chart({
     chart: {
       type: 'line',
-      height: 325
+      height: 350
     },
     title: {
       text: 'Collatz'
@@ -39,21 +40,19 @@ export class HighchartComponent {
     },
     series: [
       {
-        name: "Arizona",
+        name: "6",
         type: "line",
         color: '#044342',
         data: [70, 69, 95, 145, 182, 215, 252, 265, 233, 183, 139, 196, 70, 69, 95, 145, 182, 215, 252, 265, 233, 183, 139, 196, 70, 69, 95, 145, 182, 215, 252, 265, 233, 183, 139, 196, 70, 69, 95, 145, 182, 215, 252, 265, 233, 183, 139, 196]
       },
       {
-        name: 'Connecticut',
+        name: '10',
         type: 'line',
         color: '#7e0505',
-        data: [
-          47, 52, 44, 35, 58, 69, 32, 53, 71, 82, 99, 159
-        ]
+        data: [10, 5, 16, 8, 4, 2, 1] 
       },
       {
-        name: 'Ohio',
+        name: '20',
         type: 'line',
         color: '#ed9e20',
         data: [
@@ -67,11 +66,5 @@ export class HighchartComponent {
   })
 
 
-    
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

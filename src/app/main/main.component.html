@@ -1,10 +1,29 @@
 <div class="middle-section">
-    <div class="widget left">
-        <app-highchart></app-highchart>
+    <div class="widget">
+        <app-highchart [chart]="Chart"></app-highchart>
     </div>
 </div>
-<div class="bottom-section">
-    <div class="widget2 let">
-        <app-add></app-add>
+<div class="middle-section">
+    <div class="widget2">
+        <app-add [array_values]="array_values" [NumberValue]="NumberValue"></app-add>
+        <button>Collatz console</button>
     </div>
+</div>
+
+
+<div class="position-relative" style="width: 17rem;right: 19rem; bottom: 48rem;">
+    <table class="table text-white">
+        <thead class="thead-ligth">
+            <tr>
+                <th scope="col">Valores en ejecución</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let NumberValue of array_values">
+                <td> 
+                    {{NumberValue}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

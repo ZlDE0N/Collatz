@@ -11,6 +11,9 @@ import { AsideComponent } from './aside/aside.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartModule } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
+import { FormsModule } from '@angular/forms';
+import { ServiceService } from './services/service.service';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +22,17 @@ import * as Highcharts from 'highcharts';
     MainComponent,
     HighchartComponent,
     AddComponent,
-    AsideComponent
+    AsideComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ChartModule
+    ChartModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

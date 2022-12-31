@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
  }
 .widget {
     height: 350px;
@@ -14,15 +14,10 @@
 }
 
 .widget2{
-    height: 200px;
+    height: 300px;
     width: 100%;
     background-color: #fff;
     border-radius: 5px;
     margin: 10px;
     box-shadow: 5px 5px 5px 5px #939393;
-}
-
-.bottom-section {
-    display: flex;
-    justify-content: space-between;
 }
