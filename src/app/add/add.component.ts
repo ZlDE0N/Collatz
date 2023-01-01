@@ -1,5 +1,5 @@
 import { AnimateTimings } from '@angular/animations';
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { numberFormat } from 'highcharts';
 import { ServiceService } from '../services/service.service';
 
@@ -14,14 +14,18 @@ export class AddComponent {
   @Input() array_values:any =[];
 
   constructor(public serviceAgrear:ServiceService){}
+
+  @Output() accion:EventEmitter<any> = new EventEmitter<any>;
   
 
   add(){
-    console.log(this.NumberValue)
-    this.array_values.push(this.NumberValue)
+    this.accion.emit(this.NumberValue);
+    // console.log(this.NumberValue),
+    this.array_values.push(this.NumberValue);
     this.NumberValue = '';
-    console.log(this.array_values)
+    this.array_values;
   }
+
 
 
 

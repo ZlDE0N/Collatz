@@ -1,12 +1,11 @@
 <div class="middle-section">
     <div class="widget">
-        <app-highchart [chart]="Chart"></app-highchart>
+        <app-highchart></app-highchart>
     </div>
 </div>
 <div class="middle-section">
     <div class="widget2">
-        <app-add [array_values]="array_values" [NumberValue]="NumberValue"></app-add>
-        <button>Collatz console</button>
+        <app-add (accion)="test($event)" [array_values]="array_values" [NumberValue]="NumberValue"></app-add>
     </div>
 </div>
 
@@ -14,14 +13,20 @@
 <div class="position-relative" style="width: 17rem;right: 19rem; bottom: 48rem;">
     <table class="table text-white">
         <thead class="thead-ligth">
-            <tr>
-                <th scope="col">Valores en ejecución</th>
+            <tr style="border-width: 0px 0px 1px 0px;">
+                <th scope="col">Valores en ejecución</th> 
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let NumberValue of array_values">
                 <td> 
                     {{NumberValue}}
+                </td>
+                <td>
+                    <button class="btn btn-outline-dark" type="button" id="button-addon2"><i class="fa-solid fa-eye-slash"></i></button>
+                </td>
+                <td>
+                    <button (click)="onDelete()" class="btn btn-outline-danger" type="button" id="button-addon2"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>
         </tbody>
