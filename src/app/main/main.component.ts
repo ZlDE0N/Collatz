@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 import { chart } from 'highcharts';
 import * as Highcharts from 'highcharts';
+import { HighchartService } from '../services/highchart.service';
 
 @Component({
   selector: 'app-main',
@@ -15,18 +16,36 @@ export class MainComponent {
 
   collatz(e:number){
     collatzTail(e,store);
-    console.log(store);
-    // store = [];
-    console.log(store) //Confirmar en consola que el array store esta vacio
+    console.log(store); //Confirmar que la sentencia no se repite
+    this.chart.addSeries({
+      name: e,
+      type: 'line',
+      data: store},true,true);
+      store = []; //Vaciar el array que contiene los numeros de la conjetura de collatz
   }
 
 
-  onDelete(){
-    this.array_values.splice(-1);
+  deleteSerie(deleteNumber:number){
+    this.array_values.splice(deleteNumber,1);
+    this.chart.removeSeries(this.chart.ref.series.length - 1);
+
   }
+  //--------Servicio de highcharts-----//
+  get chart():any{
+    return this.hichartService.chart
+  }
+
+  removePoint(){
+    this.chart.removePoint(this.chart.ref.series[0].data.length - 1);
+  }
+
+    
+    
+  constructor(private hichartService: HighchartService){}
 
 }
 
+//Logica para la conjetura de collatz recursiva
 let store:[] = [];
 
 const collatzTail = (num: number, storage:number[] = store): Array<number> => {

@@ -1,26 +1,30 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Chart } from 'angular-highcharts';
-import * as Highcharts from "highcharts";
-import * as HighchartsMore from "highcharts/highcharts-more";
-import * as HighchartsExporting from "highcharts/modules/exporting";
-import { chart, Series } from 'highcharts';
-import { HighchartService } from '../services/highchart.service';
 
-@Component({
-  selector: 'app-highchart',
-  templateUrl: './highchart.component.html',
-  styleUrls: ['./highchart.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class HighchartComponent {
+export class HighchartService {
 
-  get chart():any{
-    return this.hichartService.chart
-  }
-    
-    
-    constructor(private hichartService: HighchartService){}
-    
- 
+  chart = new Chart({
+    chart: {
+      type: 'line',
+      height: 320
+    },
+    title: {
+      text: 'Collatz conjeture'
+    },
+    credits: {
+      enabled: false
+    },
+    series: [{
+      name: 'Line 1',
+      type: 'line',
+      data: [1, 2, 3]
+    }]
+  });
+
+
   // chart: Chart = new Chart;
 
   // ngOnInit() {
@@ -35,11 +39,11 @@ export class HighchartComponent {
   //   }
   // }
   // //Para agregar 
-  // addSerie() {
+  // addSerie(e:any) {
   //   this.chart.addSeries({
   //     name: 'Line',
   //     type: 'line',
-  //     data: [22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1]},true,true);
+  //     data: e},true,true);
   // }
 
 
@@ -79,8 +83,9 @@ export class HighchartComponent {
 
   //   chart.ref$.subscribe(console.log);
   // }
-  }
 
 
-
-
+  // constructor() {
+  //   console.log('servicio inicializado')
+  //  }
+}

@@ -14,8 +14,7 @@ import { AddComponent } from './add/add.component';
 import { AsideComponent } from './aside/aside.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { ServiceService } from './services/service.service';
-import { TableComponent } from './components/table/table.component';
+import { HighchartService } from './services/highchart.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { TableComponent } from './components/table/table.component';
     HighchartComponent,
     AddComponent,
     AsideComponent,
-    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +32,7 @@ import { TableComponent } from './components/table/table.component';
     ChartModule,
     FormsModule
   ],
-  providers: [ServiceService],
+  providers: [HighchartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
