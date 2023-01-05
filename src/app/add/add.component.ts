@@ -19,8 +19,9 @@ export class AddComponent {
   add(){
     this.accion.emit(this.NumberValue);
     // console.log(this.NumberValue), //Ver el numero seleccionado en consola
-    this.array_values.push(this.NumberValue);
+    this.array_values.unshift(this.NumberValue);
     this.NumberValue = '';
+    // console.log(this.array_values);
     this.array_values;
   }
 

@@ -17,18 +17,20 @@
                 <th scope="col">Valores en ejecución</th> 
             </tr>
         </thead>
-        <tbody>
-            <tr *ngFor="let NumberValue of array_values; index as i">
-                <td> 
-                    {{NumberValue}}
-                </td>
-                <td> <!--Boton de ocultar-->
-                    <button class="btn btn-outline-dark" type="button" id="button-addon2"><i class="fa-solid fa-eye-slash"></i></button>
-                </td>
-                <td><!--Boton de borrar elemento-->
-                    <button (click)="deleteSerie(i)" class="btn btn-outline-danger" type="button" id="button-addon2"><i class="fa-solid fa-trash"></i></button>
-                </td>
-            </tr>
+        <tbody >
+            <div class="d-flex flex-column-reverse">
+                <tr class="h5 d-flex justify-content-around" *ngFor="let NumberValue of array_values; index as valor">
+                    <td> 
+                        {{NumberValue}}
+                    </td>
+                    <div>
+                        <td><!--Boton de borrar elemento-->
+                            <button (click)="deleteSerie(valor)" class="btn btn-outline-danger" [disabled]= "valor !== 0 ? true : false" type="button" id="button-addon2"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </div>
+                </tr>
+            </div>
+            
         </tbody>
     </table>
 </div>

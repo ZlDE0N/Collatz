@@ -18,7 +18,7 @@ export class HighchartService {
       enabled: false
     },
     series: [{
-      name: 'Line 1',
+      name: 'Line test',
       type: 'line',
       data: [1, 2, 3]
     }]
@@ -85,7 +85,7 @@ export class HighchartService {
   // }
 
 
-  // constructor() {
-  //   console.log('servicio inicializado')
-  //  }
+//   constructor() {
+//     console.log('servicio inicializado')
+//    }
 }

@@ -6,7 +6,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    box-shadow: 5px 5px 5px #939393;
+    /* box-shadow: 5px 5px 5px #939393; */
 }
 
 .logo{
@@ -38,5 +38,7 @@
     position: relative;
     bottom: 10px;
 }
+
+
 
 

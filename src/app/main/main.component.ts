@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Chart } from 'angular-highcharts';
-import { chart } from 'highcharts';
+import { chart, Series } from 'highcharts';
 import * as Highcharts from 'highcharts';
 import { HighchartService } from '../services/highchart.service';
 
@@ -15,8 +15,9 @@ export class MainComponent {
   array_values:any =[];
 
   collatz(e:number){
+    console.log(this.array_values);
     collatzTail(e,store);
-    console.log(store); //Confirmar que la sentencia no se repite
+    // console.log(store); //Confirmar que la sentencia no se repite
     this.chart.addSeries({
       name: e,
       type: 'line',
@@ -28,17 +29,17 @@ export class MainComponent {
   deleteSerie(deleteNumber:number){
     this.array_values.splice(deleteNumber,1);
     this.chart.removeSeries(this.chart.ref.series.length - 1);
-
   }
   //--------Servicio de highcharts-----//
   get chart():any{
-    return this.hichartService.chart
+    return this.hichartService.chart;
   }
 
   removePoint(){
     this.chart.removePoint(this.chart.ref.series[0].data.length - 1);
   }
 
+  
     
     
   constructor(private hichartService: HighchartService){}
