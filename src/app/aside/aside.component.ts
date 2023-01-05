@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-aside',
@@ -6,6 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./aside.component.css']
 })
 export class AsideComponent {
-
 
 }
