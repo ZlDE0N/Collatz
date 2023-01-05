@@ -16,7 +16,7 @@ export class MainComponent {
   collatz(e:number){
     collatzTail(e,store);
     console.log(store);
-    store = [];
+    // store = [];
     console.log(store) //Confirmar en consola que el array store esta vacio
   }
 
